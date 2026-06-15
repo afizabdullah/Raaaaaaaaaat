@@ -1,0 +1,111 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/linear1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/uuuu"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="vertical">
+		<TextView
+			android:id="@+id/passW"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:padding="8dp"
+			android:text="mody"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<TextView
+			android:id="@+id/link"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:padding="8dp"
+			android:text="TextView"
+			android:textSize="12sp"
+			android:textColor="#000000" />
+		<ImageView
+			android:id="@+id/imageview1"
+			android:layout_width="150dp"
+			android:layout_height="150dp"
+			android:src="@drawable/jjjj"
+			android:scaleType="fitCenter" />
+		<LinearLayout
+			android:id="@+id/linear2"
+			android:layout_width="300dp"
+			android:layout_height="560dp"
+			android:layout_marginTop="45dp"
+			android:padding="8dp"
+			android:background="#FFFFFF"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/linear3"
+				android:layout_width="match_parent"
+				android:layout_height="145dp"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/textview1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Pass App"
+					android:textSize="40sp"
+					android:textColor="#FF0000" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear4"
+				android:layout_width="match_parent"
+				android:layout_height="45dp"
+				android:layout_margin="4dp"
+				android:background="#E0E0E0"
+				android:gravity="center_horizontal|center_vertical"
+				android:orientation="horizontal">
+				<EditText
+					android:id="@+id/edittext1"
+					android:layout_width="250dp"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="4dp"
+					android:background="#E0E0E0"
+					android:gravity="center_horizontal|center_vertical"
+					android:textSize="14sp"
+					android:textColor="#000000"
+					android:hint="type user"
+					android:textColorHint="#212121" />
+			</LinearLayout>
+			<TextView
+				android:id="@+id/textview28"
+				android:layout_width="120dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="30dp"
+				android:padding="8dp"
+				android:background="#000000"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="start"
+				android:textSize="16sp"
+				android:textColor="#FFFFFF"
+				android:layout_gravity="center_horizontal|center_vertical" />
+			<LinearLayout
+				android:id="@+id/linear5"
+				android:layout_width="match_parent"
+				android:layout_height="200dp"
+				android:padding="8dp"
+				android:orientation="horizontal" />
+			<TextView
+				android:id="@+id/textview29"
+				android:layout_width="120dp"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="get Pass"
+				android:textSize="14sp"
+				android:textColor="#FF0000"
+				android:layout_gravity="center_horizontal|center_vertical" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

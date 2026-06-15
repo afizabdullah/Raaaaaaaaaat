@@ -1,0 +1,114 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/linear2"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="vertical">
+		<LinearLayout
+			android:id="@+id/bg"
+			android:layout_width="275dp"
+			android:layout_height="300dp"
+			android:background="#FFFFFF"
+			android:gravity="center_horizontal|bottom"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/linear6"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="right|center_vertical"
+				android:orientation="horizontal">
+				<ImageView
+					android:id="@+id/i5"
+					android:focusable="false"
+					android:layout_width="18dp"
+					android:layout_height="18dp"
+					android:layout_marginLeft="15dp"
+					android:layout_marginTop="5dp"
+					android:layout_marginRight="15dp"
+					android:layout_marginBottom="5dp"
+					android:src="@drawable/close"
+					android:scaleType="fitCenter" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/linear4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:orientation="vertical"
+				android:layout_weight="1">
+				<ImageView
+					android:id="@+id/i1"
+					android:focusable="false"
+					android:layout_width="100dp"
+					android:layout_height="100dp"
+					android:src="@drawable/icc_1"
+					android:scaleType="fitCenter" />
+				<TextView
+					android:id="@+id/t6tfg1"
+					android:focusable="false"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:paddingLeft="8dp"
+					android:paddingTop="8dp"
+					android:paddingRight="8dp"
+					android:text="New update !!"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					android:textColor="#FF0000" />
+				<TextView
+					android:id="@+id/t2"
+					android:focusable="false"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="new version PhoneRAT v1.2"
+					android:textSize="14sp"
+					android:textColor="#000000" />
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/ll"
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:padding="8dp"
+				android:background="#FF0000"
+				android:orientation="horizontal" />
+			<LinearLayout
+				android:id="@+id/b2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="#273238"
+				android:gravity="center_horizontal|center_vertical"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/l5"
+					android:layout_width="match_parent"
+					android:layout_height="45dp"
+					android:background="#FFFFFF"
+					android:gravity="center_horizontal|center_vertical"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/t1"
+						android:focusable="false"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:background="#00C853"
+						android:text="Download Now"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						android:textColor="#FFFFFF" />
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
