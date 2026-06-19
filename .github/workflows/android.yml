@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: set up JDK 17
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
@@ -18,11 +18,26 @@ jobs:
           mkdir -p app/src/main/res/raw
           mv app/src/main/res/drawable-xhdpi/youtubegif.mp3 app/src/main/res/raw/youtubegif.mp3 || true
           
+      - name: Fix Gradle Versions
+        run: |
+          sed -i "s/gradle:8.12.0/gradle:8.2.0/g" build.gradle || true
+          
       - name: Fix AndroidManifest.xml and minSdk
         run: |
           sed -i 's/package="com.phonerat.M.Hanfy"//g' app/src/main/AndroidManifest.xml || true
           sed -i 's/minSdkVersion 21/minSdkVersion 24/g' app/build.gradle || true
           sed -i 's/minSdk 21/minSdk 24/g' app/build.gradle || true
+
+      - name: Fix Java Code Errors (Firebase & Missing Methods)
+        run: |
+          sed -i 's/dependencies {/dependencies {\n    implementation "com.github.mohammadatif:Animatoo:master"/g' app/build.gradle || true
+          sed -i 's/import com.google.firebase.iid.FirebaseInstanceId;/import com.google.firebase.messaging.FirebaseMessaging;/g' app/src/main/java/com/phonerat/M/Hanfy/MainActivity.java || true
+          sed -i 's/import com.google.firebase.iid.InstanceIdResult;//g' app/src/main/java/com/phonerat/M/Hanfy/MainActivity.java || true
+          sed -i 's/OnCompleteListener<InstanceIdResult>/OnCompleteListener<String>/g' app/src/main/java/com/phonerat/M/Hanfy/MainActivity.java || true
+          sed -i 's/Task<InstanceIdResult>/Task<String>/g' app/src/main/java/com/phonerat/M/Hanfy/MainActivity.java || true
+          sed -i 's/FirebaseInstanceId.getInstance().getInstanceId()/FirebaseMessaging.getInstance().getToken()/g' app/src/main/java/com/phonerat/M/Hanfy/MainActivity.java || true
+          sed -i 's/public class HomeActivity extends AppCompatActivity {/public class HomeActivity extends AppCompatActivity {\n    public float getDip(int _input) { return android.util.TypedValue.applyDimension(android.util.TypedValue.COMPLEX_UNIT_DIP, _input, getResources().getDisplayMetrics()); }/g' app/src/main/java/com/phonerat/M/Hanfy/HomeActivity.java || true
+          sed -i 's/public class VimgActivity extends AppCompatActivity {/public class VimgActivity extends AppCompatActivity {\n    public void showMessage(String _s) { android.widget.Toast.makeText(getApplicationContext(), _s, android.widget.Toast.LENGTH_SHORT).show(); }/g' app/src/main/java/com/phonerat/M/Hanfy/VimgActivity.java || true
           
       - name: Generate Gradle Wrapper (If Missing)
         run: gradle wrapper --gradle-version 8.2
