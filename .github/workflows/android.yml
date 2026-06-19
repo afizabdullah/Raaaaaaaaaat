@@ -5,21 +5,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'zulu'
           
-      # 1. حل مشكلة ملف الصوت الموجود في مجلد الصور
       - name: Fix Invalid MP3 in Drawable (Workaround)
         run: |
           mkdir -p app/src/main/res/raw
           mv app/src/main/res/drawable-xhdpi/youtubegif.mp3 app/src/main/res/raw/youtubegif.mp3 || true
           
-      # 2. توليد ملف gradle المفقود تلقائياً
       - name: Generate Gradle Wrapper (If Missing)
         run: gradle wrapper --gradle-version 8.2
 
@@ -30,7 +28,7 @@ jobs:
         run: ./gradlew assembleDebug
         
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/*.apk
