@@ -18,6 +18,12 @@ jobs:
           mkdir -p app/src/main/res/raw
           mv app/src/main/res/drawable-xhdpi/youtubegif.mp3 app/src/main/res/raw/youtubegif.mp3 || true
           
+      - name: Fix AndroidManifest.xml and minSdk
+        run: |
+          sed -i 's/package="com.phonerat.M.Hanfy"//g' app/src/main/AndroidManifest.xml || true
+          sed -i 's/minSdkVersion 21/minSdkVersion 24/g' app/build.gradle || true
+          sed -i 's/minSdk 21/minSdk 24/g' app/build.gradle || true
+          
       - name: Generate Gradle Wrapper (If Missing)
         run: gradle wrapper --gradle-version 8.2
 
